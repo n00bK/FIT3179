@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "data": { "url": "stacked_bar_chart_data/Data.csv" },
+    "mark": { "type": "bar" },
+    "encoding": {
+        "y": { "field": "Area" },
+        "x": { "aggregate": "sum", "field": "Generation (TWh)" },
+        "color": { "field": "Variable" }
+    }
+}
