@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500, 
+  "height": 500,
+  "title": "Normalized Streamgraph of Total Generation (TWh) for Europe by Energy Source from 2000-2020",
+  "data": {"url": "data/Stream_Data.csv"},
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "title": "Year",
+      "timeUnit": "yearmonth", 
+      "field": "Year",
+      "axis": {
+        "format": "%Y",
+        "domain": false,
+        "tickSize": 0
+      }
+    },
+    "y": {
+      "aggregate": "sum", 
+      "field": "Total_Generation(TWh)",
+      "title": "Total Generation of Power (TWh)",
+      "axis": null,
+      "stack": "normalize"
+    },
+    "color": {
+      "field": "Variable",
+      "title": "Energy Source",
+      "scale": {
+        "scheme": "category20c"
+      }
+    },
+    "tooltip": [
+      {"field": "Variable", "type": "nominal", "title": "Energy Source"},
+      {"field": "Total_Generation(TWh)", "type": "quantitative"}
+    ]
+  }
+}

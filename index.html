@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Energy in Europe </title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="js/visual_vis.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+</head>
+
+<body>
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <h1>Energy in Europe</h1>
+            <h4>a visualization by Kenneth Vun Jun Zhe</h4>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <h3>
+                The depletion of many vital non-renewable sources of
+                energy, especially fossil fuel, has been a topic of 
+                discussion for many of those with interest or knowledge
+                in the field of energy.
+                <br><br> 
+                Europe is a continent where many countries are leading the
+                way in using renewable resources more and more to slowly 
+                replace the depleting resources.
+                <br><br>
+                This visualization aims to reveal Europe's progress in 
+                replacing the depleting non-renewable sources of energy
+                with renewable ones.
+            </h3>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="text1_div">
+                <h2>The Energy Powerhouse <br> of Europe</h2>
+                <p>
+                    This first visualization illustrates the total amount 
+                    of "Generation" (Power Generation) from each European country for each
+                    year from 2000 to 2020.
+                    <br><br> 
+                    It is safe to say that Germany is the largest producer
+                    of power in Europe throughout 21 years from 2000 to
+                    2020. In contrast, Luxembourg is the smallest producer.
+                    <br><br>
+                    The contribution of various energy sources in generating power 
+                    from each country can be observed through this visualization 
+                    as well.
+                </p>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="stacked_bar"></div>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="scatter_plot"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="text2_div">
+                <h2>Share of Production &<br>Change from Last Year</h2>
+                <p>
+                    This Scattered Plot Chart shows the relationship between Share of Production
+                    (%) and Generation(TWh) for each country, additionally categorized by
+                    Energy Source. It also depicts the changes compared to last year(%).
+                    <br><br>
+                    One of many that can be observed is that French is the country that generates
+                    the most power through Nuclear. Another one would be that Germany produces
+                    the most power through Fossil fuels.
+                </p>
+            </div>
+            <img src="data/French_Nuclear.jfif" width="500" height="300"/>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="text1_div">
+                <h2>The Energy Source <br> Europe Is Most Reliant ON</h2>
+                <p>
+                    This visualization exhibits the total generation of power
+                    from each energy source, throughout all of Europe from
+                    2000 to 2020.
+                    <br><br>
+                    It can be concluded, unsurprisingly, that Fossil fuel is 
+                    the source Europe generates their power from. It is closely
+                    followed by Nuclear and Coal.
+                </p>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="stream_plot"></div>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="symbol_plot"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="symbol2_plot"></div>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <div id="text3_div">
+                <h2>Renewable vs Non-Renewable Energy Sources</h2>
+                <p>
+                    The 2 map visualizations above highlight total share of 
+                    production of energy from renewable sources, and from 
+                    non-renewable sources respectively.
+                    <br><br>
+                    It can be established that every country used both 
+                    sources in varying ratios throughout the years from
+                    2000 to 2020. However, it can be seen that in ther 
+                    latter years, the reliance renewable sources has seen
+                    a slow yet steady increase and vice versa, the reliance
+                    on non-renewable sources is on a very slight decline.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <div id="text3_div">
+                <h5>What Can Be Established?</h5>
+                <p>
+                    These visualizations seem to share a mutual finding,
+                    and that is the trend where reliance on renewable 
+                    resources is seeing an increase, albeit slow.
+                    <br><br>
+                    As a result, the reliance on non-renewable resources
+                    is also seeing a slight downward trend.
+                    <br><br>
+                    This is very good news, especially when many of These
+                    non-renewable resources have had people predicting 
+                    the day they are depleted. These renewable resources
+                    are proving to be an excellent alternative.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

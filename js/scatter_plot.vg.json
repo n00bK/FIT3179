@@ -1,0 +1,183 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 450,
+  "height": 900,
+  "title": "Share of Production(%) vs Generation(TWh) vs Change from last year(%) by Country from 2000-2020",
+  "data": {
+    "url": "data/Data3.csv"
+  },
+  "params": [
+    {
+      "name": "Year",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year"
+      }
+    },
+    {
+      "name": "variable_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Bioenergy",
+          "Coal",
+          "Fossil",
+          "Gas",
+          "Hard Coal",
+          "Hydro",
+          "Lignite",
+          "Nuclear",
+          "Other fossil",
+          "Other renewables",
+          "Solar",
+          "Wind"
+        ],
+        "labels": [
+          "Show All",
+          "Bioenergy",
+          "Coal",
+          "Fossil",
+          "Gas",
+          "Hard Coal",
+          "Hydro",
+          "Lignite",
+          "Nuclear",
+          "Other fossil",
+          "Other renewables",
+          "Solar",
+          "Wind"
+        ],
+        "name": "Energy Source Selection  "
+      }
+    },
+    {
+      "name": "area_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Austria",
+          "Belgium",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czech Republic",
+          "Denmark",
+          "Estonia",
+          "Finland",
+          "France",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Ireland",
+          "Italy",
+          "Latvia",
+          "Lithuania",
+          "Luxembourg",
+          "Malta",
+          "Netherlands",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "United Kingdom"
+        ],
+        "labels":[
+          "Show All",
+          "Austria",
+          "Belgium",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czech Republic",
+          "Denmark",
+          "Estonia",
+          "Finland",
+          "France",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Ireland",
+          "Italy",
+          "Latvia",
+          "Lithuania",
+          "Luxembourg",
+          "Malta",
+          "Netherlands",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "United Kingdom"
+        ],
+        "name": "Area Selection  "
+      }
+    }
+  ],
+
+  "transform": [
+    {"filter": "datum.Year == Year"},
+    {"filter": "area_selection == null || datum.Area == area_selection"},
+    {"filter": "variable_selection == null || datum.Variable == variable_selection"}
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Generation (TWh)",
+      "type": "quantitative",
+      "title": "Generation (TWh)",
+      "scale": {
+        "domain": [-20, 500]
+      }
+    },
+    "y": {
+      "field": "Share of production (%)",
+      "type": "quantitative",
+      "scale": {
+        "domain": [-10, 100]
+      }
+    },
+    "color": {
+      "field": "Area",
+      "type": "nominal",
+      "title": "European Countries"
+    },
+    "shape": {"field": "Variable", "type": "nominal", "title": "Energy Source"},
+    "opacity": {
+       "value": 0.6
+    },
+    "size": {
+      "field": "Change on last year (%)",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [-100,-90,-80,-70,-60,-50,-40,-30,-20,-10,0,10,20,30,40,50],
+        "range": [20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170]
+      }
+    },
+    "legend": {
+      "format": ".ls"
+    },
+    
+    
+    "tooltip": [
+    {"field": "Area", "type": "nominal"},
+    {"field": "Generation (TWh)", "type": "quantitative"},
+    {"field": "Share of production (%)", "type": "quantitative"},
+    {"field": "Change on last year (TWh)", "type": "quantitative"},
+    {"field": "Change on last year (%)", "type": "quantitative"},
+    {"field": "Variable", "type": "nominal"}
+  ]
+  }
+}

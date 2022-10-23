@@ -1,0 +1,111 @@
+#scatter_plot {
+	top:50px;
+	bottom: 50px; 
+	left: 10px;
+	right: 20px;
+}
+
+#stacked_bar {
+	top:50px;
+	bottom: 50px; 
+	left: 20px;
+	right: 10px;
+}
+
+#symbol_plot {
+	top:50px;
+	bottom: 50px; 
+	left: 10px;
+	right: 50px;
+}
+
+#symbol2_plot {
+	top:50px;
+	bottom:50px; 
+	left: 10px;
+	right: 10px;
+}
+
+#stream_plot {
+	top:50px;
+	bottom:50px; 
+	left: 50px;
+	right: 50px;
+}
+
+html,
+body {
+	background-color:antiquewhite;
+	width: fit-content;
+}
+
+.pure-u-1 {
+	margin-top: 0px;
+}
+
+.pure-u-1-2 {
+    margin-top: 30px;
+}
+
+#text1_div {
+    margin-left: 10px;
+    margin-right: 10px;
+	margin-top: 100px;
+}
+
+#text2_div {
+    margin-left: 10px;
+    margin-right: 10px;
+	margin-top: 100px;
+	margin-bottom: 80px;
+}
+
+#text3_div {
+    margin-left: 25px;
+    margin-right: 25px;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    color:black;
+    font-size: 70px;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+	text-align: center;
+    color:lightpink;
+    font-size: 50px;
+	font-family:monospace;
+}
+
+h3 {
+	text-align: justify;
+    color:black;
+    font-size: 35px;
+	font-style: italic;
+	font-family:monospace;
+}
+
+h4 {
+	text-align: center;
+    color:black;
+    font-size: 20px;
+	font-style: italic;
+	font-family:'Times New Roman', Times, serif;
+}
+
+h5 {
+	text-align: center;
+    color:limegreen;
+    font-size: 50px;
+	font-family:'Courier New', Courier, monospace;
+}
+
+p {
+    color: #527298;
+    font-size: 30px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
