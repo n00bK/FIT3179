@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
-  "title": "COVID-19 Cases per Country (13 Oct 2020)",
+  "width": 450,
+  "height": 900,
+  "title": "Share of Production(%) vs Generation(TWh) vs Change from last year(%) by Country from 2000-2020",
   "data": {
-    "url": "data/Pure_Data.csv"
+    "url": "data/Data3.csv"
   },
   "params": [
     {
@@ -16,6 +16,43 @@
         "max": 2020,
         "step": 1,
         "name": "Year"
+      }
+    },
+    {
+      "name": "variable_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Bioenergy",
+          "Coal",
+          "Fossil",
+          "Gas",
+          "Hard Coal",
+          "Hydro",
+          "Lignite",
+          "Nuclear",
+          "Other fossil",
+          "Other renewables",
+          "Solar",
+          "Wind"
+        ],
+        "labels": [
+          "Show All",
+          "Bioenergy",
+          "Coal",
+          "Fossil",
+          "Gas",
+          "Hard Coal",
+          "Hydro",
+          "Lignite",
+          "Nuclear",
+          "Other fossil",
+          "Other renewables",
+          "Solar",
+          "Wind"
+        ],
+        "name": "Energy Source Selection  "
       }
     },
     {
@@ -84,36 +121,41 @@
           "Sweden",
           "United Kingdom"
         ],
-        "name": "Area Selection"
+        "name": "Area Selection  "
       }
     }
   ],
 
   "transform": [
     {"filter": "datum.Year == Year"},
-    {"filter": "area_selection == null || datum.Area == area_selection"}
+    {"filter": "area_selection == null || datum.Area == area_selection"},
+    {"filter": "variable_selection == null || datum.Variable == variable_selection"}
   ],
-  "mark": "circle",
+  "mark": "point",
   "encoding": {
     "x": {
       "field": "Generation (TWh)",
       "type": "quantitative",
-      "title": "Generation"
+      "title": "Generation (TWh)",
+      "scale": {
+        "domain": [-20, 500]
+      }
     },
     "y": {
       "field": "Share of production (%)",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [-10, 100]
+      }
     },
     "color": {
       "field": "Area",
-      "type": "nominal"
+      "type": "nominal",
+      "title": "European Countries"
     },
+    "shape": {"field": "Variable", "type": "nominal", "title": "Energy Source"},
     "opacity": {
        "value": 0.6
-    },
-    "shape": {
-      "field": "Variable",
-      "type": "nominal"
     },
     "size": {
       "field": "Change on last year (%)",

@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 450,
     "height": 450,
-    "title": "title",
+    "title": "Total Share of Production(%) from Non-Renewable Energy Sources by Countries from 2001-2020",
     "projection": {"type": "naturalEarth1"},
     "layer": [
       {
@@ -28,13 +28,18 @@
             "field": "Share_sum(%)",
             "type": "quantitative",
             "title": "Total Share of Production(%)",
-            "scale": {"domain": [0,10,20,30,40,50,60,70,80,90,100]}
+            "scale": {
+              "domain": [0, 1000]
+            }
           },
           "color": {
             "field": "Change_sum(%)",
             "type": "quantitative",
             "title": "Total Change from last year(%)",
-            "scale": {"scheme": "blues"}
+            "scale": {
+              "scheme": "greens",
+              "domain": [0,100]
+            }
           }
         }
       }
@@ -45,7 +50,7 @@
         "value": 2019,
         "bind": {
           "input": "range",
-          "min": 2001,
+          "min": 2000,
           "max": 2020,
           "step": 1,
           "name": "Year"
