@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "data": { "url": "data/Pure_Data.csv" },
+    "params": [
+        {
+            "name": "Year",
+            "value": 2019,
+            "bind": {
+              "input": "range",
+              "min": 2000,
+              "max": 2020,
+              "step": 1,
+              "name": "Year"
+            }
+        },
+        {
+            "name": "Variable_selection",
+            "bind": {
+              "input": "select",
+              "options": [
+                null,
+                "Fossil",
+                "Coal",
+                "Hard Coal",
+                "Lignite",
+                "Gas",
+                "Other fossil",
+                "Nuclear",
+                "Renewables",
+                "Hydro",
+                "Wind",
+                "Solar",
+                "Bioenergy",
+                "Other renewables"
+              ],
+              "labels":[
+                "Show all",
+                "Fossil",
+                "Coal",
+                "Hard Coal",
+                "Lignite",
+                "Gas",
+                "Other fossil",
+                "Nuclear",
+                "Renewables",
+                "Hydro",
+                "Wind",
+                "Solar",
+                "Bioenergy",
+                "Other renewables"
+              ],
+              "name": "Variable Selection"
+            }
+          }
+    ],
+    "transform": [
+        {"filter": "datum.Year == Year"},
+        {"filter": "Variable_selection == null || datum.Variable == Variable_selection"}
+    ],
+    "mark": { "type": "bar" },
+    "encoding": {
+        "x": { "field": "Area" },
+        "y": { "aggregate": "sum", "field": "Generation (TWh)" },
+        "color": { "field": "Variable" },
+        "tooltip": [
+            {"field": "Area", "type": "nominal"},
+            {"field": "Generation (TWh)", "type": "quantitative"},
+            {"field": "Share of production (%)", "type": "quantitative"},
+            {"field": "Change on last year (TWh)", "type": "quantitative"},
+            {"field": "Change on last year (%)", "type": "quantitative"},
+            {"field": "Variable", "type": "nominal"}
+          ]
+    }
+}
