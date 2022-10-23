@@ -74,11 +74,11 @@
           }
         },
         "color": { 
-            "field": "Variable", 
-            "title": "Energy Source",
-            "scale": {
-                "scheme": "category20c"
-            }
+          "field": "Variable", 
+          "title": "Energy Source",
+          "scale":{
+            "scheme":"category20c"
+          } 
         },
         "tooltip": [
             {"field": "Area", "type": "nominal"},
